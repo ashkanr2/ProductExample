@@ -1,0 +1,28 @@
+﻿@model Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <form asp-action="Create" asp-controller="Product" method="post">
+        <input asp-for="Name" placeholder="Name" />
+
+        <input asp-for="Price" placeholder="Price" />
+        <input type="submit"  class="btn btn-default" />
+    </form>
+      
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@* @section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+} *@
